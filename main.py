@@ -25,8 +25,21 @@ def special_text(message):
     print(message.from_user.id)
 
 
+def schedule_checker():
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
+
+def function_to_run_every_day():
+    #parsing sites of dates
+    #download photos which associated with it
+    #make collage and
+
+
+
 if __name__ == '__main__':
     # schedule.every().day.at("01:00").do(function_to_run_every_day)
-    # threading.Thread(target=schedule_checker).start()
+    threading.Thread(target=schedule_checker).start()
 
     bot.polling(none_stop=True)
